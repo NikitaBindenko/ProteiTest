@@ -11,4 +11,4 @@
 
 `java -jar -Durl="file:///home/user/ProteiTest/qa-test.html" -Dbrowser="firefox" /home/user/ProteiTest/target/proteiTest.jar`
 
-где *-Durl* - путь до HTML-файла, *-Dbrowser* - наименовавание браузера, используемого до тестов (выбраны стандартные браузеры для каждой OC, также доступен параметр "chrome")
+где *-Durl* - путь до HTML-файла, *-Dbrowser* - наименовавание браузера, используемого для тестов (выбраны стандартные браузеры для каждой OC, также доступен параметр "chrome")
