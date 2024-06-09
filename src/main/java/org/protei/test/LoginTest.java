@@ -4,6 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.*;
 
 import static org.testng.Assert.assertEquals;
@@ -20,7 +22,12 @@ public class LoginTest {
 
     @BeforeMethod(description = "открытие страницы перед каждым тестом, поиск используемых элементов")
     public void openBrowser(){
-        driver = new ChromeDriver();
+        String browser = System.getProperty("browser");
+        switch (browser) {
+            case "firefox" -> driver = new FirefoxDriver();
+            case "chrome" -> driver = new ChromeDriver();
+            case "edge" -> driver = new EdgeDriver();
+        }
         driver.get(System.getProperty("url"));
         emailInput = driver.findElement(By.id("loginEmail"));
         passwordInput = driver.findElement(By.id("loginPassword"));
